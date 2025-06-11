@@ -1,50 +1,68 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, Globe, Settings, Palette, Video, Award } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Code, Globe, Settings, Palette, Video, ExternalLink } from "lucide-react";
 
 const skillCategories = [
   {
     title: "Programming Languages",
     icon: Code,
-    skills: ["Python", "Java", "C++", "Golang"],
+    skills: [
+      { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+      { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+      { name: "C++", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
+      { name: "Golang", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" }
+    ],
     color: "text-blue-600"
   },
   {
     title: "Web Technologies",
     icon: Globe,
-    skills: ["HTML", "CSS"],
+    skills: [
+      { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+      { name: "CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" }
+    ],
     color: "text-green-600"
   },
   {
     title: "Developer Tools",
     icon: Settings,
-    skills: ["VS Code", "GitHub"],
+    skills: [
+      { name: "VS Code", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+      { name: "GitHub", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" }
+    ],
     color: "text-purple-600"
   },
   {
     title: "Design Tools",
     icon: Palette,
-    skills: ["Figma", "Adobe Photoshop", "Lightroom Classic"],
+    skills: [
+      { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+      { name: "Adobe Photoshop", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" },
+      { name: "Lightroom Classic", logo: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Adobe_Photoshop_Lightroom_CC_logo.svg" }
+    ],
     color: "text-pink-600"
   },
   {
     title: "Video Editing",
     icon: Video,
-    skills: ["CapCut", "VN"],
+    skills: [
+      { name: "CapCut", logo: "https://img.icons8.com/color/48/capcut.png" },
+      { name: "VN", logo: "https://img.icons8.com/color/48/vn-video-editor.png" }
+    ],
     color: "text-orange-600"
   }
 ];
 
-const softSkills = [
-  "Leadership",
-  "Communication", 
-  "Problem Solving",
-  "Teamwork"
-];
-
 const certifications = [
-  "Getting Started with AI – IBM SkillsBuild",
-  "Fundamentals of Artificial Intelligence – IBM SkillsBuild"
+  {
+    title: "Getting Started with AI – IBM SkillsBuild",
+    url: "#"
+  },
+  {
+    title: "Fundamentals of Artificial Intelligence – IBM SkillsBuild", 
+    url: "#"
+  }
 ];
 
 const Skills = () => {
@@ -71,14 +89,22 @@ const Skills = () => {
                 </CardHeader>
                 
                 <CardContent>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="grid grid-cols-2 gap-4">
                     {category.skills.map((skill, skillIndex) => (
-                      <span 
+                      <div 
                         key={skillIndex}
-                        className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium"
+                        className="flex flex-col items-center gap-2 p-3 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors"
                       >
-                        {skill}
-                      </span>
+                        <img 
+                          src={skill.logo} 
+                          alt={skill.name}
+                          className="w-8 h-8 object-contain"
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none';
+                          }}
+                        />
+                        <span className="text-sm font-medium text-center">{skill.name}</span>
+                      </div>
                     ))}
                   </div>
                 </CardContent>
@@ -87,49 +113,26 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* Soft Skills & Certifications */}
-        <div className="grid gap-8 md:grid-cols-2">
-          <Card className="portfolio-card-hover border-none shadow-lg bg-white/80 backdrop-blur-sm">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-xl">
-                <Award className="h-6 w-6 text-yellow-600" />
-                Soft Skills
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-2 gap-3">
-                {softSkills.map((skill, index) => (
-                  <div 
-                    key={index}
-                    className="p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg text-center font-medium text-foreground"
-                  >
-                    {skill}
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="portfolio-card-hover border-none shadow-lg bg-white/80 backdrop-blur-sm">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-xl">
-                <Award className="h-6 w-6 text-emerald-600" />
-                Certifications
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                {certifications.map((cert, index) => (
-                  <div 
-                    key={index}
-                    className="p-4 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg"
-                  >
-                    <p className="font-medium text-foreground">{cert}</p>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+        {/* Certifications */}
+        <div className="space-y-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground">
+            Certifications
+          </h2>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            {certifications.map((cert, index) => (
+              <Button
+                key={index}
+                variant="outline"
+                size="lg"
+                className="portfolio-card-hover bg-white/80 backdrop-blur-sm border-primary/20 hover:bg-primary hover:text-primary-foreground transition-all duration-300 max-w-md"
+                onClick={() => window.open(cert.url, '_blank')}
+              >
+                <ExternalLink className="mr-2 h-4 w-4" />
+                {cert.title}
+              </Button>
+            ))}
+          </div>
         </div>
       </div>
     </section>

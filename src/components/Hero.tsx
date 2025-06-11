@@ -5,8 +5,16 @@ import { Github, Linkedin, Mail, Download } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 py-16">
-      <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
+    <section className="min-h-screen flex items-center justify-center px-4 py-16 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80')"
+        }}
+      />
+      
+      <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in relative z-10">
         <div className="space-y-4">
           <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
             Muahammed Farhan
