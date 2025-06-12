@@ -5,7 +5,7 @@ import { Github, Linkedin, Mail, MapPin, GraduationCap } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="py-16 px-4 bg-gradient-to-r from-slate-900 to-slate-800">
+    <footer className="py-10 px-10 bg-gradient-to-r from-slate-900 to-slate-800">
       <div className="max-w-4xl mx-auto">
         <Card className="p-8 md:p-12 bg-white/10 backdrop-blur-lg border-white/20 text-white">
           <div className="text-center space-y-8">
@@ -18,32 +18,30 @@ const Footer = () => {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-white/80">
-              <div className="flex items-center gap-2">
-                <GraduationCap className="h-5 w-5" />
-                <span>Computer Science, CUSAT</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="h-5 w-5" />
-                <span>Kerala, India</span>
-              </div>
-            </div>
-
             <div className="flex flex-wrap justify-center gap-4">
               <Button variant="outline" size="lg" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
                 <Mail className="mr-2 h-4 w-4" />
                 farhanmonksa@gmail.com
               </Button>
-              
-              <Button variant="outline" size="lg" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
-                <Github className="mr-2 h-4 w-4" />
-                GitHub
-              </Button>
-              
-              <Button variant="outline" size="lg" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
-                <Linkedin className="mr-2 h-4 w-4" />
-                LinkedIn
-              </Button>
+              <a
+                href="https://github.com/Farhan-KK"
+                target="_blank"
+                rel="noopener,noreferrer">
+                <Button variant="outline" size="lg" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
+                
+                  <Github className="mr-2 h-4 w-4" />
+                  GitHub
+                </Button>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/muhammed-farhan-calicut/"
+                target="_blank"
+                rel="noopener noreferrer">  
+                <Button variant="outline" size="lg" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
+                  <Linkedin className="mr-2 h-4 w-4" />
+                  LinkedIn
+                </Button>
+              </a>
             </div>
 
             <div className="pt-8 border-t border-white/20">

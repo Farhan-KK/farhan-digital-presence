@@ -63,12 +63,12 @@ const Projects = () => {
                   ))}
                 </div>
                 
-                <div className="flex gap-3 pt-2">
+                {/*<div className="flex gap-3 pt-2">
                   <Button variant="outline" size="sm" className="flex items-center gap-2">
                     <Github className="h-4 w-4" />
                     Code
                   </Button>
-                </div>
+                </div>*/}
               </CardContent>
             </Card>
           ))}

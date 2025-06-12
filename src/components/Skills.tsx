@@ -47,8 +47,7 @@ const skillCategories = [
     title: "Video Editing",
     icon: Video,
     skills: [
-      { name: "CapCut", logo: "https://img.icons8.com/color/48/capcut.png" },
-      { name: "VN", logo: "https://img.icons8.com/color/48/vn-video-editor.png" }
+      { name: "VN", logo: "https://img.icons8.com/?size=100&id=B8HxnSBBGpvx&format=png&color=000000" }
     ],
     color: "text-orange-600"
   }
