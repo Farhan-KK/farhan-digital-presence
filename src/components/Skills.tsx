@@ -57,11 +57,11 @@ const skillCategories = [
 const certifications = [
   {
     title: "Getting Started with AI – IBM SkillsBuild",
-    url: "#"
+    url: "https://drive.google.com/file/d/1fzHP3PdsiWfmQtZoINpvCURgWHBvSWg1/view?usp=sharing"
   },
   {
     title: "Fundamentals of Artificial Intelligence – IBM SkillsBuild", 
-    url: "#"
+    url: "https://drive.google.com/file/d/1kmAHwyK1Xhj1dZ8Yat3wwX_nsM7HyqFT/view?usp=sharing"
   }
 ];
 

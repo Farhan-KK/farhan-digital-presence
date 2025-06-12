@@ -12,12 +12,6 @@ const projects = [
     featured: true
   },
   {
-    title: "UI for Online Hospital Application",
-    description: "Developed a user-friendly frontend for hospital management system with intuitive design and seamless user experience.",
-    tags: ["Frontend", "UI/UX", "Healthcare", "Web Development"],
-    featured: true
-  },
-  {
     title: "Bulk Mail Automation Tool",
     description: "Python tool for sending bulk emails without using SMTP services, featuring automated scheduling and template management.",
     tags: ["Python", "Automation", "Email", "Scripting"],
@@ -73,10 +67,6 @@ const Projects = () => {
                   <Button variant="outline" size="sm" className="flex items-center gap-2">
                     <Github className="h-4 w-4" />
                     Code
-                  </Button>
-                  <Button variant="outline" size="sm" className="flex items-center gap-2">
-                    <ExternalLink className="h-4 w-4" />
-                    Demo
                   </Button>
                 </div>
               </CardContent>
